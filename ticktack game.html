@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="board" class="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    perspective: 1000px;
+    transform: rotateX(20deg);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.5s;
+    border: 2px solid transparent;
+    animation: borderAnimation 2s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: red;
+        box-shadow: 0 0 10px red;
+    }
+    25% {
+        border-color: blue;
+        box-shadow: 0 0 10px blue;
+    }
+    50% {
+        border-color: green;
+        box-shadow: 0 0 10px green;
+    }
+    75% {
+        border-color: yellow;
+        box-shadow: 0 0 10px yellow;
+    }
+    100% {
+        border-color: red;
+        box-shadow: 0 0 10px red;
+    }
+}
+
+.cell.x {
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+.cell.o {
+    color: blue;
+    text-shadow: 0 0 10px blue;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    display: none;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+</style>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait until the DOM is fully loaded before executing the script
+        
+            const board = document.getElementById('board'); // Get the board element
+            const cells = document.querySelectorAll('.cell'); // Get all cell elements
+            const result = document.getElementById('result'); // Get the result element
+            let currentPlayer = 'x'; // Set the initial player to 'x'
+            let gameActive = true; // Set the game to active
+        
+            // Define the winning conditions (combinations of cell indices that make a winning line)
+            const winningConditions = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6],
+            ];
+        
+            // Function to handle cell click events
+            function handleCellClick(event) {
+                const cell = event.target; // Get the clicked cell
+                const cellIndex = cell.getAttribute('data-index'); // Get the cell index
+        
+                // If the cell is already filled or the game is not active, return
+                if (cell.textContent !== '' || !gameActive) {
+                    return;
+                }
+        
+                cell.textContent = currentPlayer; // Set the cell's content to the current player
+                cell.classList.add(currentPlayer); // Add the player's class to the cell
+                checkResult(); // Check the game result after the move
+                currentPlayer = currentPlayer === 'x' ? 'o' : 'x'; // Switch to the other player
+            }
+        
+            // Function to check the game result
+            function checkResult() {
+                let roundWon = false; // Variable to track if the round is won
+        
+                // Loop through the winning conditions
+                for (let i = 0; i < winningConditions.length; i++) {
+                    const [a, b, c] = winningConditions[i]; // Get the current winning condition
+                    // Check if the cells match and are filled
+                    if (
+                        cells[a].textContent &&
+                        cells[a].textContent === cells[b].textContent &&
+                        cells[a].textContent === cells[c].textContent
+                    ) {
+                        roundWon = true; // Set roundWon to true if a winning condition is met
+                        break; // Exit the loop
+                    }
+                }
+        
+                if (roundWon) {
+                    displayResult(`${currentPlayer.toUpperCase()} wins!`); // Display the winner
+                    gameActive = false; // Set the game to inactive
+                    return;
+                }
+        
+                // Check if all cells are filled and it's a draw
+                const roundDraw = [...cells].every(cell => cell.textContent !== '');
+                if (roundDraw) {
+                    displayResult('Draw!'); // Display 'Draw!'
+                    gameActive = false; // Set the game to inactive
+                }
+            }
+        
+            // Function to display the result
+            function displayResult(message) {
+                result.textContent = message; // Set the result text
+                result.style.display = 'block'; // Make the result element visible
+                result.classList.add('animated'); // Add an animation class to the result
+            }
+        
+            // Add click event listeners to all cells
+            cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+        });
+        
+
+    </script>
+</body>
+</html>

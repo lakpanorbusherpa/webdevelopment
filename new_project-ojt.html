@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar-custom {
+            background-color: #1f1f1f;
+        }
+        .navbar-brand img {
+            max-height: 40px;
+        }
+        .nav-item a {
+            color: rgb(101, 99, 99);
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+        .nav-item a:hover {
+            color: #ffcc00;
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .carousel-inner img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+
+        /*Text  decoration  */
+        .beautiful-text {
+            font-family: 'Georgia', serif;
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #9ebba8;
+            border-radius: 10px;
+            justify-content: center;
+        }
+
+        .beautiful-text .dark-mode {
+            background-color: #333333;
+            color: #FFFFFF;
+        }
+        .portfolio-frame {
+            border: 10px solid #ddd;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            color: #fff;
+            text-align: center;
+        }
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .map-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .carousel-inner img {
+                height: 200px;
+            }
+            .map-container {
+                height: 200px;
+            }
+        }
+
+
+        /* css  for   navigating   the  navigation  bar  */
+        .navbar-brands {
+            display: inline-block;
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 17rem;
+            font-size: 1.25rem;
+            line-height: inherit;
+            white-space: nowrap;
+        }
+/*   css  for  round   frame  for  image */
+.rounded-circles {
+    border-radius: 26% !important;
+}
+
+    </style>
+
+<!-- new black box  ai  -->
+
+
+<style>
+    body {
+        background-color: #121212;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+    }
+    .navbar-custom {
+        background-color: #1f1f1f;
+    }
+    /*   css  for moving  the  navigation   to   the  right direction*/
+    .navbar-brand img {
+        max-height: 40px;
+        display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 17rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+
+
+        
+    }
+
+    .nav-item a {
+        color: white;
+        margin-right: 20px;
+        transition: color 0.3s;
+    }
+    .nav-item a:hover {
+        color: #191918;
+    }
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .dropdown-menu {
+        margin-top: 0;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .div-deocaration {
+        width: 100%;
+        max-height: 401px;
+        overflow-y: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color:#9ebba8;
+    }
+   
+    
+</style>
+
+
+
+<!------  javascript -------->
+
+
+
+
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="msu.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            HOME
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices  ">
+                            <a class="dropdown-item" href="#"></a>
+                            <a class="dropdown-item" href="#">Service 2</a>
+                            <a class="dropdown-item" href="#">Service 3</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ABOUT
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
+                            <a class="dropdown-item" href="#">Service 1</a>
+                            <a class="dropdown-item" href="#">Service 2</a>
+                            <a class="dropdown-item" href="#">Service 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CONTACT
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
+                            <a class="dropdown-item" href="#">Service 1</a>
+                            <a class="dropdown-item" href="#">Service 2</a>
+                            <a class="dropdown-item" href="#">Service 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            BLOG
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
+                            <a class="dropdown-item" href="#">Service 1</a>
+                            <a class="dropdown-item" href="#">Service 2</a>
+                            <a class="dropdown-item" href="#">Service 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            PROJECT
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
+                            <a class="dropdown-item" href="ticktack game.html">ticktack game </a>
+                            <a class="dropdown-item" href="winter project  web designing backup 2\backup winter project.html">winter project</a>
+                            <a class="dropdown-item" href="#">project 3</a>
+                        </div>
+                    </li>
+                    <style>
+                        .hire-me-button {
+                            background-color: #007bff;
+                            color: white;
+                            padding: 10px 20px;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                        }
+                        .hire-me-button:hover {
+                            background-color: #0056b3;
+                        }
+                        /* new  popup   message  and  button */
+                        /* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 400px;
+  }
+  
+  /* Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Style for Login/Signup buttons */
+  #loginBtn,
+  #signupBtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  #loginBtn:hover,
+  #signupBtn:hover {
+    background-color: #0056b3;
+  }
+  .ls{
+display:flex;
+flex-direction:row;
+column-gap: 90px;
+  }
+  /*  css  for dark theme*/
+/* styles.css */
+
+/* General styles */
+body {
+    transition: background-color 0.5s, color 0.5s;
+    background-color: #b4c0b8
+}
+
+/* Dark Mode Styles ***********************************************/
+body.dark-mode {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+header.dark-mode {
+    background-color: #444444;
+    color: #FFFFFF;
+}
+
+/* Nav links and auth buttons for dark mode */
+.nav-links.dark-mode a,
+.auth-buttons.dark-mode a {
+    color: #FFFFFF;
+}
+
+#dark-mode-toggle {
+    cursor: pointer;
+}
+
+#dark-mode-toggle img {
+    width: 30px;
+    height: 30px;
+}
+
+
+</style>
+
+
+
+                    
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-primary mr-2" href="form\login.html">Reg/Login</a>
+                    </li>
+                </ul>
+               <!-- Other header content -->
+        <div id="dark-mode-toggle">
+            <img src="dark.png" alt="Sun Icon" id="sun-icon">
+            <img src="light.png" alt="Moon Icon" id="moon-icon" style="display: none;">
+        </div>
+
+
+            </div>
+        </div>
+    </nav>
+    </body>
+
+    <!-- Login/Signup Modal -->
+<div id="loginSignupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="color: black;">Login or Sign Up</h2>
+      <div class="ls">
+      <button id="loginBtn">already user</button>
+      <button id="signupBtn">new user</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+//**************************************************************************************************************
+//javascript  for  dark theme
+// Get references to the toggle icons
+const sunIcon = document.getElementById('sun-icon');
+const moonIcon = document.getElementById('moon-icon');
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('header').classList.toggle('dark-mode');
+    document.querySelector('.nav-links').classList.toggle('dark-mode');
+    document.querySelector('.auth-buttons').classList.toggle('dark-mode');
+
+    // Toggle icon visibility
+    sunIcon.style.display = sunIcon.style.display === 'none' ? 'block' : 'none';
+    moonIcon.style.display = moonIcon.style.display === 'none' ? 'block' : 'none';
+
+    // Save the current mode to localStorage
+    const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('mode', currentMode);
+}
+
+// Event listeners for the icons
+sunIcon.addEventListener('click', toggleDarkMode);
+moonIcon.addEventListener('click', toggleDarkMode);
+
+// Retain dark mode setting on page reload
+document.addEventListener('DOMContentLoaded', () => {
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('header').classList.add('dark-mode');
+        document.querySelector('.nav-links').classList.add('dark-mode');
+        document.querySelector('.auth-buttons').classList.add('dark-mode');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+    }
+});
+
+//************************************************************************************************************
+
+
+    // Get the modal
+const modal = document.getElementById('loginSignupModal');
+
+// Get the <span> element that closes the modal
+const closeBtn = document.querySelector('.close');
+
+// Function to display the modal
+function displayModal() {
+  modal.style.display = 'block';
+}
+
+ // Get the buttons
+ const loginBtn = document.getElementById('loginBtn');
+ const signupBtn = document.getElementById('signupBtn');
+
+
+// Function to close the modal when clicking on the close button
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Redirect to another page when buttons are clicked
+loginBtn.addEventListener('click', () => {
+    window.location.href = 'form/login.html'; // Replace with your login page URL
+  });
+
+  signupBtn.addEventListener('click', () => {
+    window.location.href = 'form/login.html'; // Replace with your signup page URL
+  });
+
+
+// Display the modal when the page is loaded
+window.addEventListener('load', displayModal);
+
+  </script>
+<!----------carasell    section-->
+<div id="sectionCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <section>
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="beautiful-text">
+                                <div class="div-deocaration">
+                                <h2>NETWORKING</h2>
+                                <p>Networking is a crucial subject in the Bachelor of Computer 
+                                <p>Applications (BCA) curriculum. It encompasses the study of 
+                                <p>how computers and other devices communicate with each other,
+                                <p> sharing resources and information. Networking is the backbone
+                                <p> of modern information technology and plays a significant role 
+                                <p>in various applications, from simple file sharing to complex 
+                              <p>cloud computing environments.
+
+
+
+<p>Students in BCA learn about different types of networks,
+<p> including Local Area Networks (LAN), Wide Area Networks
+<p>(WAN), and Metropolitan Area Networks (MAN). They study 
+<p>network topologies, such as star, ring, and mesh, which
+<p>define the layout of network connections. The course also 
+<p>covers networking models, like the OSI (Open Systems 
+<p>Interconnection) model and the TCP/IP model, which
+    <p> standardize communication protocols.
+<p>Understanding IP addressing is fundamental, 
+<p>as it allows devices to be identified on a network.
+<p> Students learn about IPv4 and IPv6, subnetting, and
+<p> the role of DNS (Domain Name System) in resolving
+<p> human-readable addresses to IP addresses. Networking also
+<p> involves studying various communication protocols, such as 
+<p>HTTP, FTP, SMTP, and more, which facilitate data exchange over 
+    <p>the internet.
+
+<p>Another important aspect of networking in BCA is network
+<p> security. Students explore different types of threats and
+<p> vulnerabilities, as well as measures to protect networks,
+<p> including firewalls, encryption, and intrusion detection systems.
+    
+
+                                <br>
+                                <br>
+                                
+                                <button class="hire-me-button">Hire Me</button>
+
+
+                            </div>
+                            </div>
+
+                            <!-- JAVASCRIPT   TO     AUTO  SCROLL  THE   PARAGRAPH  -->
+                            <script>
+                                window.onload = function() {
+                                    var div = document.querySelector('.div-deocaration');
+                                    var speed = 3; // Adjust the speed of scrolling (1 is default, higher is faster)
+                                    var scrollHeight = div.scrollHeight - div.clientHeight;
+                            
+                                    function scrollText() {
+                                        if (div.scrollTop >= scrollHeight) {
+                                            div.scrollTop = 0;
+                                        } else {
+                                            div.scrollTop += speed;
+                                        }
+                                    }
+                            
+                                    setInterval(scrollText, 50); // Adjust the interval to change scrolling speed
+                                };
+                            </script>
+                            
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="portfolio-frame-circle">
+                                <img src="laku.jpg" alt="Beautiful Landscape" class="img-fluid rounded-circle rounded-circles">
+                            </div>
+
+                       
+                </div>
+            </section>
+        </div>
+        <div class="carousel-item">
+            <section>
+                <!-- Add content for the second slide here -->
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="beautiful-text">
+                                <h2>hello every one </h2>
+                                <p>My name is Lakpa NOrbu Sherpa</p>
+                                <p>My Course is BCA in cyber security</p>
+                                <p>I have a desire to learn aws </p>
+                                <br>
+                                <br>
+                                <button class="hire-me-button">Hire Me</button>
+
+                               
+                            </div>
+                           
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-frame-circle">
+                                <img src="city.jpg" alt="Adventure" class="img-fluid rounded-circle rounded-circles {
+                                    border-radius: 26% !important;
+                                }">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="carousel-item">
+            <section>
+                <!-- Add content for the third slide here -->
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="beautiful-text">
+                                <h2>Database management is a critical aspect  </h2>
+                                <p>of many courses, providing foundational knowledge</p>
+                                <p> in organizing, storing, and retrieving data efficiently.</p>
+
+                                <br>
+                                <br>
+                                <button class="hire-me-button">Hire Me</button>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-frame-circle">
+                                <img src="img3.jpg" alt="Relaxation" class="img-fluid rounded-circle rounded-circles">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#sectionCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#sectionCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+    <!-----------footer  section------------->
+   
+    <div class="map-container">
+        <div></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2284.951856660495!2d88.4645!3d27.2645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a0581a1c7f05%3A0x68e4d40b17e60f5c!2sSingtam%2C%20Sikkim%20737134!5e0!3m2!1sen!2sin!4v1589526800721!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
